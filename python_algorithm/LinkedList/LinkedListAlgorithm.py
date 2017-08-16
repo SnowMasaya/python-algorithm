@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import
 from __future__ import unicode_literals
-from LinkedList import LinkedList
 from delete_duplicate import deleteDups, deleteDupsNonbuffer
-from util import make_linked_list, print_list
+from util import make_linked_list, print_list, make_linked_list_number
 from kth_last import printKthToLast, kthToLast, nthToLast
 from delete_node import deleteNode
 
@@ -31,4 +30,12 @@ if __name__ == "__main__":
 
     print('-----Delete element Linked list ----')
     linkedlist = make_linked_list()
-    # deleteNode(linkedlist)
+    print_list(linkedlist)
+    linkedlist = linkedlist.next
+    print('Delete process')
+    linkedlist = deleteNode(linkedlist)
+    print_list(linkedlist)
+
+    print('-----Partition element Linked list ----')
+    linkedlist = make_linked_list_number(number_list=[1, 2, 3, 4])
+    print_list(linkedlist)

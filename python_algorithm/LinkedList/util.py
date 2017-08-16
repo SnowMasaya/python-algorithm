@@ -20,3 +20,15 @@ def make_linked_list()-> LinkedList:
     linkedlist2.next = linkedlist3
     linkedlist3.next = linkedlist4
     return  linkedlist
+
+def make_linked_list_number(number_list: list)-> LinkedList:
+    linkedlist = None
+
+    for number in number_list:
+        if linkedlist is None:
+            linkedlist = LinkedList(current_node=number)
+        else:
+            linkedlist.next = LinkedList(current_node=number)
+            linkedlist = linkedlist.next
+
+    return  linkedlist

@@ -9,6 +9,6 @@ def deleteNode(n :LinkedList) -> LinkedList:
         return False
 
     next = n.next
-    n.data = next.data
+    n.current = next.current
     n.next = next.next
     return n
