@@ -11,6 +11,7 @@ def partition(node: LinkedList, x: int) -> LinkedList:
 
     while node is not None:
         next = node.next
+        node.next = None
         if node.current < x :
             if beforeStart is None:
                 beforeStart = node
