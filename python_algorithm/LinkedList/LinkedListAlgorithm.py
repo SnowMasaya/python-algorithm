@@ -5,7 +5,7 @@ from delete_duplicate import deleteDups, deleteDupsNonbuffer
 from util import make_linked_list, print_list, make_linked_list_number
 from kth_last import printKthToLast, kthToLast, nthToLast
 from delete_node import deleteNode
-from partition import partition
+from partition import partition, partion_short_code
 
 
 if __name__ == "__main__":
@@ -42,4 +42,7 @@ if __name__ == "__main__":
     print_list(linkedlist)
     print('-----After Partition element Linked list ----')
     linkedlist = partition(linkedlist, 3)
+    print_list(linkedlist)
+    print('-----After2 Partition element Linked list ----')
+    linkedlist = partion_short_code(linkedlist, 3)
     print_list(linkedlist)

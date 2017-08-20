@@ -33,3 +33,21 @@ def partition(node: LinkedList, x: int) -> LinkedList:
 
     beforeEnd.next = afterStart
     return beforeStart
+
+def partion_short_code(node: LinkedList, x: int) -> LinkedList:
+    head = node
+    tail = node
+
+    while node != None:
+        next = node.next
+        if node.current < x:
+            node.next = head
+            head = node
+        else:
+            tail.next = node
+            tail = node
+        node = next
+
+    tail.next = None
+
+    return head
