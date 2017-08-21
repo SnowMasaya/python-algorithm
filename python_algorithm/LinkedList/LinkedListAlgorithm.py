@@ -6,6 +6,7 @@ from util import make_linked_list, print_list, make_linked_list_number
 from kth_last import printKthToLast, kthToLast, nthToLast
 from delete_node import deleteNode
 from partition import partition, partion_short_code
+from adding import addLists
 
 
 if __name__ == "__main__":
@@ -46,3 +47,13 @@ if __name__ == "__main__":
     print('-----After2 Partition element Linked list ----')
     linkedlist = partion_short_code(linkedlist, 3)
     print_list(linkedlist)
+
+    print('-----adding element Linked list ----')
+    linkedlist = make_linked_list_number(number_list=[7, 1, 6])
+    print_list(linkedlist)
+    print('-----adding element Linked list2 ----')
+    linkedlist2 = make_linked_list_number(number_list=[5, 9, 2])
+    print_list(linkedlist)
+    print('-----adding process ----')
+    resultlist = addLists(linkedlist, linkedlist2, 0)
+    print_list(resultlist)
