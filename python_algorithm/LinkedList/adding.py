@@ -38,3 +38,62 @@ def addLists(l1: LinkedList, l2: LinkedList, carry: int) -> LinkedList:
 
     return result
 
+class PartialSum(object):
+
+    def __init__(self):
+        self.sum = None
+        self.carry = 0
+
+
+def addlistsSecond(l1: LinkedList, l2: LinkedList) -> LinkedList:
+    len1 = len(l1)
+    len2 = len(l2)
+
+    if len1 < len2:
+        l1 = paddList(l1, len2 - len1)
+    else:
+        l2 = paddList(l2, len1 - len2)
+
+    sum = addListsHelper(l1, l2)
+
+    if sum.curry == 0:
+        return sum.sum
+    else:
+        result = insertBefore(sum.sum, sum.curry)
+        return result
+
+
+def addListsHelper(l1: LinkedList, l2: LinkedList) -> PartialSum:
+    if l1 is None and l2 is None:
+        sum = PartialSum()
+        return sum
+
+    sum = addListsHelper(l1.next, l2.next)
+
+    val = sum.curry + l1.current + l2.current
+
+    full_result = insertBefore(sum.sum, val % 10)
+
+    sum.sum = full_result
+    sum.carry = val / 10
+    return sum
+
+
+def paddList(l: LinkedList, padding: int) -> LinkedList:
+    head = l
+    for i in range(padding):
+        head = insertBefore(head, 0)
+
+    return head
+
+
+def insertBefore(list: LinkedList, data: int) -> LinkedList:
+    node = LinkedList()
+    node.current = data
+    if list is not None:
+        node.next = list
+    return node
+
+
+
+
