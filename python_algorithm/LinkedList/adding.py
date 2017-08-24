@@ -46,8 +46,8 @@ class PartialSum(object):
 
 
 def addlistsSecond(l1: LinkedList, l2: LinkedList) -> LinkedList:
-    len1 = len(l1)
-    len2 = len(l2)
+    len1 = get_length_linked_list(l1)
+    len2 = get_length_linked_list(l2)
 
     if len1 < len2:
         l1 = paddList(l1, len2 - len1)
@@ -56,11 +56,19 @@ def addlistsSecond(l1: LinkedList, l2: LinkedList) -> LinkedList:
 
     sum = addListsHelper(l1, l2)
 
-    if sum.curry == 0:
+    if sum.carry == 0:
         return sum.sum
     else:
-        result = insertBefore(sum.sum, sum.curry)
+        result = insertBefore(sum.sum, sum.carry)
         return result
+
+
+def get_length_linked_list(l: LinkedList):
+    length_count = 0
+    while l is not None:
+        length_count += 1
+        l = l.next
+    return  length_count
 
 
 def addListsHelper(l1: LinkedList, l2: LinkedList) -> PartialSum:
@@ -70,12 +78,12 @@ def addListsHelper(l1: LinkedList, l2: LinkedList) -> PartialSum:
 
     sum = addListsHelper(l1.next, l2.next)
 
-    val = sum.curry + l1.current + l2.current
+    val = sum.carry + l1.current + l2.current
 
     full_result = insertBefore(sum.sum, val % 10)
 
     sum.sum = full_result
-    sum.carry = val / 10
+    sum.carry = val // 10
     return sum
 
 
