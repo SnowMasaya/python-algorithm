@@ -7,6 +7,7 @@ from kth_last import printKthToLast, kthToLast, nthToLast
 from delete_node import deleteNode
 from partition import partition, partion_short_code
 from adding import addLists, addlistsSecond
+from palindrome import is_palindrome
 
 
 if __name__ == "__main__":
@@ -63,7 +64,17 @@ if __name__ == "__main__":
     print_list(linkedlist)
     print('-----adding element Linked list2 ----')
     linkedlist2 = make_linked_list_number(number_list=[5, 6, 7])
-    print_list(linkedlist)
+    print_list(linkedlist2)
     print('-----adding process ----')
     resultlist = addlistsSecond(linkedlist, linkedlist2)
     print_list(resultlist)
+
+    print('-----Palindrome Linked list ----')
+    linkedlist = make_linked_list_number(number_list=[0, 1, 2, 1, 0])
+    print('-----Check palindrome Linked list ----')
+    linkedlist2 = is_palindrome(linkedlist)
+    print(linkedlist2)
+    linkedlist = make_linked_list_number(number_list=[0, 1, 2, 1, 1])
+    print('-----Check palindrome Linked list2 ----')
+    linkedlist2 = is_palindrome(linkedlist)
+    print(linkedlist2)
