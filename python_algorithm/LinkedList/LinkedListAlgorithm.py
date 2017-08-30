@@ -78,3 +78,13 @@ if __name__ == "__main__":
     print('-----Check palindrome Linked list2 ----')
     linkedlist2 = is_palindrome(linkedlist)
     print(linkedlist2)
+
+    print('-----Palindrome Linked list by the stack ----')
+    print('-----Check palindrome Linked list ----')
+    linkedlist = make_linked_list_number(number_list=[0, 1, 2, 1, 0])
+    linkedlist2 = is_palindrome(linkedlist)
+    print(linkedlist2)
+    print('-----Check palindrome Linked list ----')
+    linkedlist = make_linked_list_number(number_list=[0, 1, 2, 1, 1])
+    linkedlist2 = is_palindrome(linkedlist)
+    print(linkedlist2)

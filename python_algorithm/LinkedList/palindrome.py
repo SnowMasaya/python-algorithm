@@ -2,6 +2,7 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 from LinkedList import LinkedList
+from stack import Stack
 
 
 def is_palindrome(head: LinkedList) -> bool:
@@ -28,3 +29,29 @@ def is_equal(one: LinkedList, two: LinkedList)-> bool:
         one = one.next
         two = two.next
     return one is None and two is None
+
+
+def isPalinedrome(head: LinkedList):
+    fast = head
+    slow = head
+
+    stack = Stack()
+
+    while fast is not None and fast.next is not None:
+        stack.push(slow.current)
+        fast = fast.next.next
+
+    if fast is not None:
+        slow = slow.next
+
+    while slow is not None:
+        top = int(stack.pop())
+
+        if top != slow.current:
+            return False
+
+        slow = slow.next
+
+    return True
+
+
