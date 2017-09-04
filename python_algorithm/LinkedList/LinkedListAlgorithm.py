@@ -7,7 +7,7 @@ from kth_last import printKthToLast, kthToLast, nthToLast
 from delete_node import deleteNode
 from partition import partition, partion_short_code
 from adding import addLists, addlistsSecond
-from palindrome import is_palindrome
+from palindrome import is_palindrome, isPalinedromeSecond
 
 
 if __name__ == "__main__":
@@ -88,3 +88,14 @@ if __name__ == "__main__":
     linkedlist = make_linked_list_number(number_list=[0, 1, 2, 1, 1])
     linkedlist2 = is_palindrome(linkedlist)
     print(linkedlist2)
+
+    print('-----Check palindrome recurse Linked list ----')
+    linkedlist = make_linked_list_number(number_list=[0, 1, 2, 1, 0])
+    result = isPalinedromeSecond(linkedlist)
+    print(result)
+    linkedlist = make_linked_list_number(number_list=[0, 1, 2, 1, 1])
+    result = isPalinedromeSecond(linkedlist)
+    print(result)
+    linkedlist = make_linked_list_number(number_list=[0, 1, 2, 2, 2])
+    result = isPalinedromeSecond(linkedlist)
+    print(result)
