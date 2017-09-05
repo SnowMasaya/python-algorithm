@@ -8,6 +8,7 @@ from delete_node import deleteNode
 from partition import partition, partion_short_code
 from adding import addLists, addlistsSecond
 from palindrome import is_palindrome, isPalinedromeSecond
+from find_intersection import find_inter_section
 
 
 if __name__ == "__main__":
@@ -98,4 +99,10 @@ if __name__ == "__main__":
     print(result)
     linkedlist = make_linked_list_number(number_list=[0, 1, 2, 2, 2])
     result = isPalinedromeSecond(linkedlist)
+    print(result)
+
+    print('-----Check match Linked list ----')
+    linkedlist = make_linked_list_number(number_list=[3, 1, 5, 9, 7, 2, 1])
+    linkedlist2 = make_linked_list_number(number_list=[4, 6, 7, 2, 1])
+    result = find_inter_section(linkedlist, linkedlist2)
     print(result)
